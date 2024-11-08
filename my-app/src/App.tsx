@@ -8,15 +8,13 @@ import { ScrollableWithMovingBlock } from './components/scrollable-with-moving-b
 
 export default function App() {
 
-  const slowComponents = (
-    <>
-      <VerySlowComponent />
-      <BunchOfStuff />
-      <OtherStuffAlsoComplicated />
-    </>
-  );
-
   return (
-    <ScrollableWithMovingBlock content={slowComponents} />
+    <ScrollableWithMovingBlock>
+      <>
+        <VerySlowComponent />
+        <BunchOfStuff />
+        <OtherStuffAlsoComplicated />
+      </>
+    </ScrollableWithMovingBlock>
   );
 }

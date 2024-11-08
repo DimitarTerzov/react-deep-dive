@@ -1,8 +1,8 @@
 import { ReactElement, UIEventHandler, useState } from "react"
 import { MovingBlock } from "./moving-block";
 
-type Props = { content: ReactElement }
-export const ScrollableWithMovingBlock = ({content}: Props) => {
+type Props = { children: ReactElement }
+export const ScrollableWithMovingBlock = ({children}: Props) => {
     const [position, setPosition] = useState(0);
 
     // just hard-coded approximation to demonstrate the re-renders problem
@@ -17,7 +17,7 @@ export const ScrollableWithMovingBlock = ({content}: Props) => {
     return (
         <div className="scrollable-block" onScroll={onScroll}>
             <MovingBlock position={position} />
-            {content}
+            {children}
         </div>
     );
 }
